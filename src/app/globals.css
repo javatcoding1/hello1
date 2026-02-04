@@ -1,0 +1,47 @@
+:root {
+  /* Ultima Premium Palette */
+  
+  /* Backgrounds: Delicate, milky, warm */
+  --bg-warm-cream: #FDFBF7;   /* Porcelain / Ivory */
+  --bg-blush: #F7E7E6;        /* Very faint blush */
+  
+  /* Accents: Metallic and Rich */
+  --accent-gold: #C5A059;     /* Antique Gold */
+  --accent-rose-gold: #D4AF98; 
+  --deep-burgundy: #5D0016;   /* Royal dark red */
+  
+  /* Text */
+  --text-primary: #4A3B3B;    /* Warm charcoal */
+  --text-secondary: #8C7878;  /* Muted taupe */
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Ensure full screen immersion */
+  background: radial-gradient(circle at 50% 40%, var(--bg-warm-cream), var(--bg-blush)); 
+  color: var(--text-primary);
+}
+
+body {
+  font-family: var(--font-sans), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif), serif;
+  font-weight: 300; /* Sophisticated light weight */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Scrollbar hiding just in case */
+::-webkit-scrollbar {
+  display: none;
+}

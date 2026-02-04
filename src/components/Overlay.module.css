@@ -1,0 +1,68 @@
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem 1.5rem;
+  z-index: 10;
+}
+
+.header {
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  font-weight: 500;
+  color: #720e1e; /* Deep Red, fixed value to ensure contrast */
+  letter-spacing: 0.02em; 
+  line-height: 1.1;
+  text-shadow: 0 4px 15px rgba(114, 14, 30, 0.2); /* Stronger shadow */
+  margin-bottom: 0.5rem;
+}
+
+.quote {
+  font-family: var(--font-sans);
+  font-size: 1.3rem;
+  font-weight: 500; /* Bolder */
+  color: #4A3B3B; /* Darker charcoal */
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.03em;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.subtext {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.2em; /* Wide tracking for premium feel */
+  color: var(--text-secondary);
+  border-top: 1px solid var(--accent-rose-gold);
+  padding-top: 1rem;
+  display: inline-block;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 4.5rem;
+  }
+  .roseIcon {
+     font-size: 5rem;
+  }
+  .quote {
+    font-size: 1.4rem;
+  }
+  .subtext {
+    font-size: 1.1rem;
+  }
+}
