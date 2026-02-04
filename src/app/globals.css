@@ -6,13 +6,13 @@
   --bg-blush: #F7E7E6;        /* Very faint blush */
   
   /* Accents: Metallic and Rich */
-  --accent-gold: #C5A059;     /* Antique Gold */
-  --accent-rose-gold: #D4AF98; 
-  --deep-burgundy: #5D0016;   /* Royal dark red */
-  
+  --accent-gold: #FFD700;     /* Gold */
+  --accent-rose-gold: #E0BFB8; 
+  --deep-burgundy: #5D0016;   
+
   /* Text */
-  --text-primary: #4A3B3B;    /* Warm charcoal */
-  --text-secondary: #8C7878;  /* Muted taupe */
+  --text-primary: #FDFBF7;    /* Cream/White for Dark Mode */
+  --text-secondary: #E0BFB8;  /* Rose Gold for subtext */
 }
 
 html,
@@ -22,7 +22,7 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden; /* Ensure full screen immersion */
-  background: radial-gradient(circle at 50% 40%, var(--bg-warm-cream), var(--bg-blush)); 
+  background: radial-gradient(circle at 50% 40%, #2a0a0a, #000000); /* Dark Red to Black */
   color: var(--text-primary);
 }
 

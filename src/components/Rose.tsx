@@ -17,15 +17,15 @@ declare global {
 
 // --- Materials ---
 const ROSE_MATERIAL = new THREE.MeshPhysicalMaterial({
-  color: new THREE.Color("#720e1e"), // Deep Red
-  emissive: new THREE.Color("#2a0000"),
-  emissiveIntensity: 0.2, // Inner glow
-  roughness: 0.5, 
+  color: new THREE.Color("#880000"), // Pure Deep Red
+  emissive: new THREE.Color("#330000"),
+  emissiveIntensity: 0.1,
+  roughness: 0.6, // Less glossy to avoid pink highlights
   metalness: 0.1,
-  clearcoat: 0.1, 
-  sheen: 1.0, 
-  sheenRoughness: 0.4,
-  sheenColor: new THREE.Color("#ff5555"), 
+  clearcoat: 0.0, 
+  sheen: 0.5, // Reduced sheen to avoid washing out the red
+  sheenRoughness: 0.5,
+  sheenColor: new THREE.Color("#ff0000"), 
   side: THREE.DoubleSide
 });
 
@@ -258,21 +258,25 @@ function ParametricPetalWithRef({ index, total, layer, bloomRef }: any) {
              const localBloom = THREE.MathUtils.smoothstep(bloom, startT, endT);
              
              // Rotations
-             // Closed: 0.4 (Tucked in tight)
-             // Open: -1.5 (Drooped down)
-             const closedRot = 0.5; 
-             const openRot = -1.0 - (layerNorm * 0.5); // Outer droops more
+             // Closed: 0.5 (Tucked in tight)
+             // Open: -0.4 (Still somewhat upward/cupped, not flat)
+             // Previous open was -1.0 which is too flat/lotus-like.
              
-             // If innermost, never fully open?
+             const closedRot = 0.5; 
+             const baseOpenRot = -0.4; // Much more upright
+             // Outer layers can drop a bit more, but not too much
+             const openRot = baseOpenRot - (layerNorm * 0.4); 
+             
+             // If innermost, keep very upright
              let targetRot = openRot;
-             if (layer < 2) targetRot = 0.0; // Inner keep somewhat cup shape
+             if (layer < 2) targetRot = 0.2; // Inner stays positive (cupped in)
              
              const currentRot = THREE.MathUtils.lerp(closedRot, targetRot, localBloom);
              
              meshRef.current.rotation.x = currentRot;
              
-             // Expand Radius
-             meshRef.current.position.z = layer * 0.05 + (localBloom * 0.15); // Push out
+             // Expand Radius slightly less to keep tight form
+             meshRef.current.position.z = layer * 0.04 + (localBloom * 0.1);
         }
     })
 

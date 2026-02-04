@@ -1,10 +1,30 @@
 "use client";
 
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useThree } from "@react-three/fiber";
 import { Environment, OrbitControls, Sparkles } from "@react-three/drei";
 import { EffectComposer, Bloom, Vignette, Noise } from "@react-three/postprocessing";
 import { Rose } from "./Rose";
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
+
+function ResponsiveCamera() {
+  const { camera, size } = useThree();
+
+  useEffect(() => {
+    // If width is small (mobile), move camera back
+    const isMobile = size.width < 768;
+    // Default Z is 7. Mobile needs more distance (~9-10) or wider FOV.
+    // Let's just animate/set position.
+    if (isMobile) {
+        camera.position.z = 10;
+        camera.position.y = 2.5; // Look down a bit more
+    } else {
+        camera.position.z = 7;
+        camera.position.y = 2;
+    }
+  }, [camera, size.width]);
+
+  return null;
+}
 
 export default function Scene() {
   return (
@@ -16,6 +36,8 @@ export default function Scene() {
       >
         <color attach="background" args={['#1a0505']} /> 
         
+        <ResponsiveCamera />
+
         <Suspense fallback={null}>
             {/* Environment for natural reflections on velvet */}
             <Environment preset="studio" />

@@ -21,46 +21,58 @@
 .title {
   font-family: var(--font-serif);
   font-size: 3.5rem;
-  font-weight: 500;
-  color: #720e1e; /* Deep Red, fixed value to ensure contrast */
+  font-weight: 600; 
+  color: #D4AF37; /* Metallic Gold */
   letter-spacing: 0.02em; 
   line-height: 1.1;
-  text-shadow: 0 4px 15px rgba(114, 14, 30, 0.2); /* Stronger shadow */
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
   margin-bottom: 0.5rem;
 }
 
 .quote {
   font-family: var(--font-sans);
-  font-size: 1.3rem;
-  font-weight: 500; /* Bolder */
-  color: #4A3B3B; /* Darker charcoal */
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: #F5F5DC; /* Cream / Beige */
   line-height: 1.8;
   margin-bottom: 1.5rem;
   letter-spacing: 0.03em;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
 }
 
 .subtext {
   font-family: var(--font-sans);
   font-size: 0.95rem;
-  font-weight: 400;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.2em; /* Wide tracking for premium feel */
-  color: var(--text-secondary);
-  border-top: 1px solid var(--accent-rose-gold);
+  letter-spacing: 0.2em;
+  color: #bf9b30; /* Darker Gold */
+  border-top: 1px solid #D4AF37;
   padding-top: 1rem;
   display: inline-block;
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2.5rem;
+    margin-bottom: 0.25rem;
+  }
+  .quote {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  .subtext {
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+  }
 }
 
 @media (min-width: 768px) {
   .title {
     font-size: 4.5rem;
   }
-  .roseIcon {
-     font-size: 5rem;
-  }
   .quote {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
   .subtext {
     font-size: 1.1rem;

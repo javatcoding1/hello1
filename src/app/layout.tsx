@@ -17,6 +17,9 @@ const sansFont = Montserrat({
 export const metadata: Metadata = {
   title: "Happy Rose Day",
   description: "A digital rose, gifted with intention.",
+  icons: {
+    icon: '/icon.svg',
+  },
 };
 
 export default function RootLayout({
