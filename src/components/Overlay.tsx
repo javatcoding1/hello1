@@ -23,24 +23,36 @@ export default function Overlay() {
       <div className={styles.spacer} />
 
       {/* Low-key bottom text */}
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.5, delay: 2.5, ease: "easeOut" }}
-        className={styles.footer}
-      >
-        <p className={styles.quote}>
-          &ldquo;A small reminder that some gestures don’t need many words.&rdquo;
-        </p>
+      <div className={styles.footer}>
         <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1.5, delay: 4.5 }}
-            className={styles.subtext}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 2.5, ease: "easeOut" }}
+          className={styles.message}
         >
-          Just wanted to make you smile today.
+          I know the MBA exams have been exhausting lately,
+          and your body hasn’t really gotten the rest it deserves.
         </motion.p>
-      </motion.div>
+
+        <motion.p 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 4.5, ease: "easeOut" }}
+          className={styles.message}
+        >
+          This is just a small, quiet reminder
+          to slow down for a moment and be gentle with yourself today.
+        </motion.p>
+
+        <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 6.5, ease: "easeOut" }}
+            className={styles.message}
+        >
+          Hope this brings a little calm in between everything.
+        </motion.p>
+      </div>
     </div>
   );
 }
