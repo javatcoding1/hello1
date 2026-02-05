@@ -52,6 +52,15 @@ export default function Overlay() {
         >
           Hope this brings a little calm in between everything.
         </motion.p>
+        
+        <motion.p 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.5, delay: 8.5 }}
+            className={styles.subtext}
+        >
+          Just wanted to make you smile today.
+        </motion.p>
       </div>
     </div>
   );
